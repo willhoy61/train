@@ -40,14 +40,14 @@ $("frequency").val("");
 
 });
 
-database.ref().on("child_added", function(childSnapShot, prevChildKey){
+database.ref().on("child_added", function(snapshot){
 
 
 
-var train = childSnapshot.val().trainName;
-var dest = childSnapshot.val().destination;
-var fTrain = childSnapshot.val().firstTrain;
-var frequent = childSnapshot.val().frequency;
+var train = snapshot.val().trainName;
+var dest = snapshot.val().destination;
+var fTrain = snapshot.val().firstTrain;
+var frequent = snapshot.val().frequency;
 
 $("#trainTable > tbody").append("<tr><td>" + train + "</td><td>" + dest + "</td><td>" + fTrain + "</td><td>" + frequent + "</td></tr>");
 })
